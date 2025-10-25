@@ -33,3 +33,23 @@ out/
 
 ### Mac OS ###
 .DS_Store
+
+# Java build files
+*.class
+/out/
+/target/
+
+# IntelliJ
+.idea/
+*.iml
+
+# Eclipse
+.metadata/
+
+# Logs & temp files
+*.log
+*.tmp
+
+# OS-specific
+.DS_Store
+Thumbs.db
