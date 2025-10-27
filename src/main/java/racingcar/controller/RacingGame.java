@@ -31,8 +31,20 @@ public class RacingGame {
         RaceCarGroup raceCarGroup = new RaceCarGroup(input);
 
         outputView.displayResultHeader();
+        playAllRounds(raceCarGroup, raceCount);
 
         List<String> winners = winnerCalculator.calculateWinner(raceCarGroup.getCars());
         outputView.displayWinner(winners);
+    }
+
+    private void playAllRounds(RaceCarGroup raceCarGroup, int raceCount) {
+        for(int i = 0; i < raceCount; i++) {
+            racingRound.playRound(raceCarGroup);
+            showRoundResult(raceCarGroup);
+        }
+    }
+
+    private void showRoundResult(RaceCarGroup raceCarGroup) {
+        outputView.displayRoundResult(raceCarGroup.getCars());
     }
 }
