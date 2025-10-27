@@ -17,13 +17,6 @@ public class RacingRound {
 
     private void raceOneCar(RaceCar raceCar) {
         int randomNumber = generator.generateRandomNumber();
-
-        if(isMovable(randomNumber)) {
-            raceCar.moveForward();
-        }
-    }
-
-    private boolean isMovable(int randomNum) {
-        return randomNum >= 4;
+        raceCar.moveIfMovable(randomNumber);
     }
 }
