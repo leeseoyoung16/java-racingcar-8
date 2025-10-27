@@ -1,6 +1,5 @@
 package racingcar.controller;
 
-import racingcar.domain.RaceCar;
 import racingcar.model.RaceCarGroup;
 import racingcar.model.RacingRound;
 import racingcar.model.RandomNumberGenerator;
@@ -8,7 +7,7 @@ import racingcar.model.WinnerCalculator;
 import racingcar.view.InputHandler;
 import racingcar.view.OutputView;
 
-import java.util.Set;
+import java.util.List;
 
 public class RacingGame {
     private final InputHandler inputHandler;
@@ -33,12 +32,7 @@ public class RacingGame {
 
         outputView.displayResultHeader();
 
-        for(int i = 0; i < raceCount; i++) {
-            racingRound.playRound(raceCarGroup);
-            outputView.displayRoundResult(raceCarGroup.getCars());
-        }
-
-        Set<String> winners = winnerCalculator.calculateWinner(raceCarGroup.getCars());
+        List<String> winners = winnerCalculator.calculateWinner(raceCarGroup.getCars());
         outputView.displayWinner(winners);
     }
 }

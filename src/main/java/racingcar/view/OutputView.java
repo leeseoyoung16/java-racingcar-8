@@ -2,10 +2,10 @@ package racingcar.view;
 
 import racingcar.domain.RaceCar;
 
-import java.util.Set;
+import java.util.List;
 
 public class OutputView {
-    public void displayRoundResult(Set<RaceCar> raceCars) {
+    public void displayRoundResult(List<RaceCar> raceCars) {
         for(RaceCar car : raceCars) {
             displayCarRoundResult(car);
         }
@@ -19,7 +19,7 @@ public class OutputView {
         System.out.println("실행 결과");
     }
 
-    public void displayWinner(Set<String> winners) {
+    public void displayWinner(List<String> winners) {
         System.out.print("최종 우승자 : ");
         String result = String.join(", ", winners);
         System.out.println(result);

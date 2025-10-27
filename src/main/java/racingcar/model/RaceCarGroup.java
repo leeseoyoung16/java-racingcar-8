@@ -3,19 +3,19 @@ package racingcar.model;
 import racingcar.ErrorMessage;
 import racingcar.domain.RaceCar;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.LinkedList;
+import java.util.List;
 
 public class RaceCarGroup {
-    private final Set<RaceCar> racingCarGroup = new HashSet<>();
+    private final List<RaceCar> racingCarGroup = new LinkedList<>();
 
-    public Set<RaceCar> getCars() {
+    public List<RaceCar> getCars() {
         return racingCarGroup;
     }
 
     public RaceCarGroup(String input) {
         CarNamesParser carNamesParser = new CarNamesParser();
-        Set<String> carNames = carNamesParser.parseNames(input);
+        List<String> carNames = carNamesParser.parseNames(input);
 
         validateCarNumber(carNames.size());
 

@@ -4,6 +4,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -22,10 +24,10 @@ class CarNamesParserTest {
         String input = "pobi,woni,xeo";
 
         //when
-        Set<String> result = carNamesParser.parseNames(input);
+        List<String> result = carNamesParser.parseNames(input);
 
         //then
-        Set<String> carNames = new HashSet<>();
+        List<String> carNames = new LinkedList<>();
         carNames.add("pobi");
         carNames.add("woni");
         carNames.add("xeo");

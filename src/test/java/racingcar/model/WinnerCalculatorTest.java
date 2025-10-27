@@ -5,6 +5,8 @@ import org.junit.jupiter.api.Test;
 import racingcar.domain.RaceCar;
 
 import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -20,24 +22,24 @@ class WinnerCalculatorTest {
     @Test
     void 단독_우승자_테스트() {
         //given
-        Set<RaceCar> raceCars = new HashSet<>();
+        List<RaceCar> raceCars = new LinkedList<>();
         RaceCar pobi = new RaceCar("pobi");
-        pobi.moveForward();
-        pobi.moveForward();
+        pobi.moveIfMovable(5);
+        pobi.moveIfMovable(5);
 
         RaceCar woni = new RaceCar("woni");
-        woni.moveForward();
+        woni.moveIfMovable(5);
 
         RaceCar xeo = new RaceCar("xeo");
-        xeo.moveForward();
+        xeo.moveIfMovable(5);
 
         raceCars.add(pobi);
         raceCars.add(woni);
         raceCars.add(xeo);
         //when
-        Set<String> result = winnerCalculator.calculateWinner(raceCars);
+        List<String> result = winnerCalculator.calculateWinner(raceCars);
         //then
-        Set<String> expected = new HashSet<>();
+        List<String> expected = new LinkedList<>();
         expected.add("pobi");
 
         assertEquals(expected, result);
@@ -46,26 +48,26 @@ class WinnerCalculatorTest {
     @Test
     void 공동_우승자_테스트() {
         //given
-        Set<RaceCar> raceCars = new HashSet<>();
+        List<RaceCar> raceCars = new LinkedList<>();
         RaceCar pobi = new RaceCar("pobi");
-        pobi.moveForward();
-        pobi.moveForward();
+        pobi.moveIfMovable(5);
+        pobi.moveIfMovable(5);
 
         RaceCar woni = new RaceCar("woni");
-        woni.moveForward();
+        woni.moveIfMovable(5);
 
         RaceCar xeo = new RaceCar("xeo");
-        xeo.moveForward();
-        xeo.moveForward();
+        xeo.moveIfMovable(5);
+        xeo.moveIfMovable(5);
 
         raceCars.add(pobi);
         raceCars.add(woni);
         raceCars.add(xeo);
 
         //when
-        Set<String> result = winnerCalculator.calculateWinner(raceCars);
+        List<String> result = winnerCalculator.calculateWinner(raceCars);
         //then
-        Set<String> expected = new HashSet<>();
+        List<String> expected = new LinkedList<>();
         expected.add("pobi");
         expected.add("xeo");
 

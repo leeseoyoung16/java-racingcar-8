@@ -2,12 +2,12 @@ package racingcar.model;
 
 import racingcar.domain.RaceCar;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.LinkedList;
+import java.util.List;
 
 public class WinnerCalculator {
-    public Set<String> calculateWinner(Set<RaceCar> raceCars) {
-        Set<String> winners = new HashSet<String>();
+    public List<String> calculateWinner(List<RaceCar> raceCars) {
+        List<String> winners = new LinkedList<>();
         int maxLocation = calculateMaxLocation(raceCars);
 
         for(RaceCar raceCar : raceCars) {
@@ -18,7 +18,7 @@ public class WinnerCalculator {
         return winners;
     }
 
-    private int calculateMaxLocation(Set<RaceCar> raceCars) {
+    private int calculateMaxLocation(List<RaceCar> raceCars) {
         return raceCars.stream().mapToInt(RaceCar::getLocation)
                 .max().orElse(0);
     }

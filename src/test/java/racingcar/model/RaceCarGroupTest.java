@@ -4,6 +4,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import racingcar.domain.RaceCar;
 
+import java.util.List;
 import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -18,7 +19,7 @@ class RaceCarGroupTest {
         //when
         raceCarGroup = new RaceCarGroup(input);
         //then
-        Set<RaceCar> cars = raceCarGroup.getCars();
+        List<RaceCar> cars = raceCarGroup.getCars();
         assertEquals(cars.size(), 3);
 
         assertTrue(cars.stream().anyMatch(car -> car.getName().equals("pobi")));

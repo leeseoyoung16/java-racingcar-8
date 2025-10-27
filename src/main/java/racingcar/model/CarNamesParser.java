@@ -2,12 +2,12 @@ package racingcar.model;
 
 import racingcar.ErrorMessage;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.LinkedList;
+import java.util.List;
 
 public class CarNamesParser {
-    public Set<String> parseNames(String names) {
-        Set<String> carNames = new HashSet<>();
+    public List<String> parseNames(String names) {
+        List<String> carNames = new LinkedList<>();
 
         for (String carName : names.split(",")) {
             carName = carName.trim();
